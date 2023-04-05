@@ -2,6 +2,17 @@ import { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 
 function DeleteCohortPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [cohorts, setCohorts] = useState(null);
+    const [sendDeleteRequest, setSendDeleteRequest] = useState(null);
+    console.log("test");
+    
+    const makeDeleteReq = (id)=>{
+        fetch(`http://127.0.0.1:8000/api/cohort/${id}`, { method: 'DELETE' })
+        .then(()=>setSendDeleteRequest(id))
+        console.log("Deleted ");
+    }
+    
     useEffect(()=>{
         // our code goes here
         fetch("http://127.0.0.1:8000/api/cohort/")
@@ -12,13 +23,8 @@ function DeleteCohortPage() {
         })
         .catch(err=>console.log(err))
         }
-    )
-    const makeDeleteReq = (id)=>{
-        // console.log(`delete pressed${id}`);
-        fetch(`http://127.0.0.1:8000/api/cohort/${id}`, { method: 'DELETE' })
-    }
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [cohorts, setCohorts] = useState(null);
+    , [sendDeleteRequest])
+
     const displayCohorts = () =>{
         return cohorts.map(cohort=>
             <div key={cohort.id}>

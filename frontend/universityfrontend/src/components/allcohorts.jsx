@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
 function AllCohorts() {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [cohorts, setCohorts] = useState(null);
+    console.log("test");
     useEffect(()=>{
         // our code goes here
         fetch("http://127.0.0.1:8000/api/cohort/")
@@ -11,9 +14,7 @@ function AllCohorts() {
         })
         .catch(err=>console.log(err))
         }
-    )
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [cohorts, setCohorts] = useState(null);
+    , [])
     const displayCohorts = () =>{
         return cohorts.map(cohort=>
             <li key={cohort.id}>id={cohort.id}, {cohort.name}, {cohort.year}, {cohort.degree}</li> // return the jsx to render
