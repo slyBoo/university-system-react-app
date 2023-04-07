@@ -24,7 +24,7 @@ export default function StudentDropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ color: '#fff', mr: 3}}
+        sx={{ fontWeight: 'bold', color: 'inherit', mr: 3}}
       >
         STUDENTS
       </Button>
@@ -38,8 +38,8 @@ export default function StudentDropdown() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose} component={Link} to='/cohort'>Search Student</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/cohort'>Create Student</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/single/student'>Search Student</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/create/student'>Create Student</MenuItem>
       </Menu>
     </div>
   );

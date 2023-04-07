@@ -24,7 +24,7 @@ export default function CohortDropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ color: '#fff', mr: 3}}
+        sx={{ fontWeight: 'bold', color: 'inherit', mr: 3}}
       >
         COHORT
       </Button>

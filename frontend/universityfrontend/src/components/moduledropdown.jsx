@@ -24,7 +24,7 @@ export default function ModuleDropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{ color: '#fff', mr: 3}}
+        sx={{ fontWeight: 'bold', color: 'inherit', mr: 3}}
       >
         MODULES
       </Button>
@@ -38,9 +38,9 @@ export default function ModuleDropdown() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose} component={Link} to='/cohort'>View all Modules</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/cohort'>Search Modules</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/create/cohort'>Create Module</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/module'>View all Modules</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/search/module'>Search Modules</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/create/module'>Create Module</MenuItem>
       </Menu>
     </div>
   );

@@ -8,8 +8,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        University System
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -34,7 +34,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            My sticky footer can be found here.
+            University System designed by Universities for Universities.
           </Typography>
           <Copyright />
         </Container>

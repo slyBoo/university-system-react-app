@@ -51,7 +51,7 @@ export default function DrawerAppBar(props) {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<CssBaseline />
-			<AppBar component="nav">
+			<AppBar component="nav" sx={{color: 'black', background: 'linear-gradient(to bottom left, #f8fc03, #ffa81c)', boxShadow: "none"}}>
 				<Toolbar>
 					<IconButton
 						color="inherit"
@@ -66,7 +66,7 @@ export default function DrawerAppBar(props) {
 						align="left"
 						variant="h6"
 						component="div"
-						sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+						sx={{ flexGrow: 1, display: { fontWeight: 'bold', xs: 'none', sm: 'block' } }}
 					>
 						University System
 					</Typography>
@@ -93,7 +93,7 @@ export default function DrawerAppBar(props) {
 					{drawer}
 				</Drawer>
 			</Box>
-			<Box component="main" sx={{ p: 3 }}>
+			<Box component="main">
 				<Toolbar />
 			</Box>
 		</Box>
