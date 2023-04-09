@@ -20,14 +20,11 @@ function HeroPage() {
           backgroundClip: 'text',
 		  fontWeight: 400,
         }}>
-				Welcome to my site!
+				Introducing University System!
 			</Typography>
 			<Typography variant="h4" sx={{ mb: 4 }}>
-				This is a hero page built with Material-UI.
+				A site for Universities built by Universities!
 			</Typography>
-			<Button variant="contained" color="primary">
-				Get started
-			</Button>
 		</Box>
 	);
 }

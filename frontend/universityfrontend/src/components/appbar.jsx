@@ -7,6 +7,7 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { Button } from '@mui/material';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,6 +17,8 @@ import DegreeDropdown from './degreedropdown';
 import CohortDropdown from './cohortdropdownbutton';
 import ModuleDropdown from './moduledropdown';
 import StudentDropdown from './studentdropdown';
+import { Link } from 'react-router-dom';
+
 const drawerWidth = 240;
 const navItems = ['Cohorts', 'Degrees', 'Modules', 'Students'];
 const navLinks = ['/cohort', '/degrees', '/modules', '/students'];
@@ -62,14 +65,15 @@ export default function DrawerAppBar(props) {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography
+					<Button
 						align="left"
 						variant="h6"
-						component="div"
+						component={Link}
+						to="/"
 						sx={{ flexGrow: 1, display: { fontWeight: 'bold', xs: 'none', sm: 'block' } }}
 					>
 						University System
-					</Typography>
+					</Button>
 					<CohortDropdown />
 					<DegreeDropdown />
 					<ModuleDropdown />
