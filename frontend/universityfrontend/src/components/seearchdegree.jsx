@@ -4,12 +4,12 @@ import { TextField, IconButton, Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 
-function SearchForm() {
+function SearchDegree() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/student/${searchTerm}`);
+    navigate(`/degree/${searchTerm}`);
   };
 
   const handleChange = (event) => {
@@ -31,11 +31,11 @@ function SearchForm() {
         'WebkitTextFillColor': 'transparent',
         backgroundClip: 'text',
       }}>
-        Search Student ID
+        Search Degree Code
       </Typography>
       <form onSubmit={handleSubmit} style={{ width: '40rem' }} >
         <TextField
-          label="Search Student ID"
+          label="Search Degree Code"
           value={searchTerm}
           onChange={handleChange}
           variant="standard"
@@ -57,4 +57,4 @@ function SearchForm() {
   );
 }
 
-export default SearchForm;
+export default SearchDegree;

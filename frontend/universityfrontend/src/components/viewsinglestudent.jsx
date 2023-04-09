@@ -11,12 +11,13 @@ function SingleStudent() {
     useEffect(()=>{
             // our code goes here
             fetch(`http://127.0.0.1:8000/api/student/${id}`)
-            .then(response=>{
-                if (response.status === "404") {
-                    navigate("/notfound")
+            .then(response => {
+                if (response.status === 404) {
+                    navigate('/notfound', { replace: true });
                     return null;
+                } else {
+                    return response.json()
                 }
-                return response.json();
             })
             .then(data=>{
                 console.log()

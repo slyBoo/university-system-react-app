@@ -39,7 +39,7 @@ export default function CohortDropdown() {
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose} component={Link} to='/cohort'>View all Cohorts</MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to='/cohort'>Search Cohorts</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/search/cohort'>Search Cohorts</MenuItem>
         <MenuItem onClick={handleClose} component={Link} to='/create/cohort'>Create Cohort</MenuItem>
       </Menu>
     </div>

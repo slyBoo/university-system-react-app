@@ -51,7 +51,7 @@ export default function DrawerAppBar(props) {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<CssBaseline />
-			<AppBar component="nav" sx={{color: 'black', background: 'linear-gradient(to bottom left, #f8fc03, #ffa81c)', boxShadow: "none"}}>
+			<AppBar component="nav" sx={{color: 'black', background: 'linear-gradient(to bottom left, #ee0979, #ff6a00)', boxShadow: "none"}}>
 				<Toolbar>
 					<IconButton
 						color="inherit"

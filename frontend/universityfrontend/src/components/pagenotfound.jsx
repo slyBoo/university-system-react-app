@@ -9,7 +9,7 @@ function PageNotFound() {
 				flexDirection: 'column',
 				justifyContent: 'center',
 				alignItems: 'center',
-				height: '100vh',
+				height: '80vh',
 			}}
 		>
 			<Typography variant="h1"         sx={{
@@ -19,11 +19,11 @@ function PageNotFound() {
           'WebkitTextFillColor': 'transparent',
           backgroundClip: 'text',
 		  fontWeight: 400,
-          fontSize: '30rem'
+          fontSize: '20rem'
         }}>
 				404!
 			</Typography>
-			<Typography variant="h4" sx={{ mb: 4,  opacity: .4}}>
+			<Typography variant="h4" sx={{ opacity: .4}}>
 				The page that you are looking for cannot be found!
 			</Typography>
 		</Box>

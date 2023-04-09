@@ -38,7 +38,7 @@ export default function StudentDropdown() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose} component={Link} to='/single/student'>Search Student</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/search/student'>Search Student</MenuItem>
         <MenuItem onClick={handleClose} component={Link} to='/create/student'>Create Student</MenuItem>
       </Menu>
     </div>
