@@ -40,6 +40,7 @@ export default function StudentDropdown() {
       >
         <MenuItem onClick={handleClose} component={Link} to='/search/student'>Search Student</MenuItem>
         <MenuItem onClick={handleClose} component={Link} to='/create/student'>Create Student</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to='/grade'>Grade Student</MenuItem>
       </Menu>
     </div>
   );

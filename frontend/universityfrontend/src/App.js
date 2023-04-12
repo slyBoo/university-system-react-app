@@ -22,6 +22,7 @@ import SearchDegree from './components/seearchdegree';
 import SearchModules from './components/searchmodules';
 import SingleModule from './components/viewsinglemodule';
 import CohortModules from './components/cohortmodules';
+import GradeStudent from './components/gradestudent';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/student/:id" element={<SingleStudent />}></Route>
             <Route path="/search/student" element={<SearchForm />}></Route>
             <Route path="/create/student" element={<StudentForm />}></Route>
+            <Route path="/grade" element={<GradeStudent />}></Route>
             <Route path="/cohortmodules/:id" element={<CohortModules />}></Route>
             <Route path="/notfound" element={<PageNotFound />}></Route>
             <Route path="*" element={<PageNotFound />}></Route>
