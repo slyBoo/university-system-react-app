@@ -1,12 +1,13 @@
 import { Typography, Box, Button, TextField, Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import { useEffect, useState } from "react";
-
+// import { useNavigate } from "react-router-dom";
 
 function ModuleForm() {
     const [cohorts, setCohorts] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);    
     const [selectedValues, setSelectedValues] = useState([]);
-
+    const [reqMessage, setReqMessage] = useState("")
+    // const navigate = useNavigate();
     const handleChange = (event) => {
       const { value } = event.target;
       setSelectedValues(value);
@@ -49,7 +50,15 @@ function ModuleForm() {
         jsonData["delivered_to"] = selectedValues;
         console.log(JSON.stringify(jsonData));
         // pass form data as a fetch body diretly;
-        fetch('http://127.0.0.1:8000/api/module/', { method: form.method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(jsonData) });
+        fetch('http://127.0.0.1:8000/api/module/', { method: form.method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(jsonData) })   
+        .then(response => {
+            if (!response.ok) {
+                setReqMessage("Form input is invalid")
+            } else {
+                setReqMessage("Success!")
+                // navigate(`/module/${jsonData["code"]}`)
+            }
+        });
     }
 
     function cohortSelector() {
@@ -122,6 +131,7 @@ function ModuleForm() {
                     variant="contained"
                     sx={{ display: "flex", ml: "auto", mr: 0, mt: 3, mb: 2 }}
                     >Create Module</Button>
+                    <Typography color="red">{reqMessage}</Typography>
             </Box>
         )
     }

@@ -3,11 +3,14 @@ import { Box } from "@mui/system";
 import Typography from "@mui/material/Typography"
 import { MenuItem, FormControl, InputLabel, Select } from "@mui/material";
 import { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+
 function StudentForm() {
     const [cohorts, setCohorts] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [selectedValues, setSelectedValues] = useState("");
-
+    const [reqMessage, setReqMessage] = useState("");
+    // const navigate = useNavigate();
     const handleChange = (event) => {
         const { value } = event.target;
         setSelectedValues(value);
@@ -51,7 +54,14 @@ function StudentForm() {
         jsonData["cohort"] = selectedValues;
         console.log(JSON.stringify(jsonData));
         // pass form data as a fetch body diretly;
-        fetch('http://127.0.0.1:8000/api/student/', { method: form.method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(jsonData) });
+        fetch('http://127.0.0.1:8000/api/student/', { method: form.method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(jsonData) })   
+        .then(response => {
+            if (!response.ok) {
+                setReqMessage("Form input is invalid")
+            } else {
+                setReqMessage("Success")
+            }
+        });
     }
     function cohortSelector() {
         return cohorts.map(cohort =>
@@ -120,6 +130,7 @@ function StudentForm() {
                     variant="contained"
                     sx={{ display: "flex", ml: "auto", mr: 0, mt: 3, mb: 2 }}
                 >Create Student</Button>
+                <Typography color="red">{reqMessage}</Typography>
             </Box>
         )
     }

@@ -1,16 +1,24 @@
-import { Button, TextField } from "@mui/material";
-import { Box } from "@mui/system";
+import { Button, TextField, Box } from "@mui/material";
 import Typography from "@mui/material/Typography"
+import { useState } from "react";
 
 function DegreeForm() {
+    const [reqMessage, setReqMessage] = useState("")
     function handleSubmit(e) {
         // prevent the browser from reloading the page
         e.preventDefault();
         const form = e.target;
-        const formData = new FormData(form);
-
+        const formData = new FormData(form); 
         // pass form data as a fetch body diretly;
-        fetch('http://127.0.0.1:8000/api/degree/', { method: form.method, body: formData });
+        fetch('http://127.0.0.1:8000/api/degree/', { method: form.method, body: formData })
+        .then(response => {
+            if (!response.ok) {
+                setReqMessage("Form input is invalid")
+            } else {
+                setReqMessage("Success!")
+                // navigate(`/cohort/${jsonData["id"]}`)
+            }
+        });
     }
     return (
         
@@ -47,6 +55,8 @@ function DegreeForm() {
             variant="contained"
             sx={{ display: "flex", ml: "auto", mr: 0, mt: 3, mb: 2 }}
             >Create Degree</Button>
+             <Typography color="red">{reqMessage}</Typography>
+
         </Box>
     )
 }
